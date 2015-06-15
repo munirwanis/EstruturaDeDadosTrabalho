@@ -2,5 +2,7 @@
 
 main()
 {
-	printf("Passei aqui\n");
+	//printf("Passei aqui\n");
+	
+	printf("oi");
 }
