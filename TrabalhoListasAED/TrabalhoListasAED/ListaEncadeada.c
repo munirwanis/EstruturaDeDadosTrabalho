@@ -22,16 +22,7 @@ item* CreateList(int val)
 	ptr->next = NULL;
 	head = current = ptr;
 	return ptr;
-
-	//for (int i = 1; i <= NUM_MAX_LISTA; i++)
-	//{
-	//	current = (item *)malloc(sizeof(item));
-	//	current->val = i/*rand(NUM_MAX_LISTA)*/;
-	//	current->next = head;
-	//	head = current;
-	//}
-	//current = head;
-
+	
 	while (current)
 	{
 		printf("%d\n", current->val);
@@ -52,31 +43,34 @@ item* AddToList(int val)
 	return ptr;
 }
 
-void ListBubbleSort(item **head)
+void ListBubbleSort(item *start)
 {
-	int done = 0;
-	//if (*head == NULL || (*head)->next == NULL) return;
+	int swapped, i;
+	item *ptr1 = start;
+	item *lptr = NULL;
 
-	while (!done)
+	/* Checking for empty list */
+	if (ptr1 == NULL)
+		return;
+
+	do
 	{
-		item **ptrSource = head; // "source" of the ptr to the current node in the list struct
-		item *ptrLocalIterator = *head; // local iterator pointer
-		item *ptrNext = (*head)->next; // local next pointer
-		done = 1;
-		while (ptrNext)
+		swapped = 0;
+		ptr1 = start;
+
+		while (ptr1->next != lptr)
 		{
-			if (ptrLocalIterator->val > ptrNext->val)
+			if (ptr1->val > ptr1->next->val)
 			{
-				ptrLocalIterator->next = ptrNext->next;
-				ptrNext->next = ptrLocalIterator;
-				*ptrSource = ptrNext;
-				done = 0;
+				i = ptr1->val;
+				ptr1->val = ptr1->next->val;
+				ptr1->next->val = i;
+				swapped = 1;
 			}
-			ptrSource = &ptrLocalIterator->next;
-			ptrLocalIterator = ptrNext;
-			ptrNext = ptrNext->next;
+			ptr1 = ptr1->next;
 		}
-	}
+		lptr = ptr1;
+	} while (swapped);
 }
 
 void PrintList()
@@ -98,8 +92,7 @@ void LinkedListTest()
 		AddToList(rand() % NUM_MAX_LISTA);
 	}
 	PrintList();
-	item *ptr = head;
-	ListBubbleSort(ptr);
+	ListBubbleSort(head);
 	PrintList();
 	getchar();
 }

@@ -9,6 +9,6 @@ typedef struct No
 }item;
 item* CreateList(int val);
 item* AddToList(int val);
-void ListBubbleSort(item **head);
+void ListBubbleSort(item *start);
 void LinkedListTest();
 void PrintList();
