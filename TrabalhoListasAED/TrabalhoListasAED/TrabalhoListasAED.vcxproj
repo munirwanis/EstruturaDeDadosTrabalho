@@ -78,13 +78,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BubbleSort.c" />
     <ClCompile Include="ListaEncadeada.c" />
+    <ClCompile Include="ListaSequencial.c" />
     <ClCompile Include="Principal.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="ListaEncadeada.h" />
+    <ClInclude Include="ListaSequencial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "BubbleSort.h"
 #ifndef NUM_MAX_LISTA
 #define NUM_MAX_LISTA 10
 #endif

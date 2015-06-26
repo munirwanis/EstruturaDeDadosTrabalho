@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BubbleSort.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ListaEncadeada.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Principal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaSequencial.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="ListaEncadeada.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BubbleSort.h">
+    <ClInclude Include="ListaSequencial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,11 @@
 #include "ListaEncadeada.h"
-#include "BubbleSort.h"
+#include "ListaSequencial.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
-void main()
+int main()
 {
-	BubbleTest();
 	LinkedListTest();
+	SequencialTest();
 }
