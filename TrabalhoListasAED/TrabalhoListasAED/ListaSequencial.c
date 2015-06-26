@@ -72,6 +72,23 @@ void QuickSort(int vet[], int inicio, int fim)
 	if (i < fim){ QuickSort(vet, i, fim); }
 }
 
+// BucketSort para a Lista Sequencial
+void BucketSort(int vet[])
+{
+	int i, j;
+	int count[MAX_TAM_VETOR];
+	for (i = 0; i < MAX_TAM_VETOR; i++) {
+		count[i] = 0;
+	}
+	for (i = 0; i < MAX_TAM_VETOR; i++) {
+		(count[vet[i]])++;
+	}
+	for (i = 0, j = 0; i < MAX_TAM_VETOR; i++) {
+		for (; count[i] > 0; (count[i])--) {
+			vet[j++] = i;
+		}
+	}
+}
 // testes para ver se métodos funcionam
 void SequencialTest()
 {
@@ -97,6 +114,14 @@ void SequencialTest()
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 	printf("\nOrdenacao\tTempo\n");
 	printf("QuickSort\t%.10f\n", cpu_time_used);
+	getchar();
 
+	InicializaVetor(vetor);
+	start = clock();
+	BucketSort(vetor);
+	end = clock();
+	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	printf("\nOrdenacao\tTempo\n");
+	printf("BucketSort\t%.10f\n", cpu_time_used);
 	getchar();
 }

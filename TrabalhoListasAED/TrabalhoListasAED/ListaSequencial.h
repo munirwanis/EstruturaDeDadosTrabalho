@@ -11,4 +11,6 @@ void BubbleSort(int *vet[], int tamanho);
 
 void QuickSort(int *vet[], int inicio, int fim);
 
+void BucketSort(int vet[]);
+
 void SequencialTest();
