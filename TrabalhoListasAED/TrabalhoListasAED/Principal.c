@@ -5,6 +5,6 @@
 
 int main()
 {
-	//ListaEncadeada();
+	ListaEncadeada();
 	ListaSequencial();
 }
