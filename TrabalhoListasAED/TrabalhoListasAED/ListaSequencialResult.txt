@@ -1,0 +1,25 @@
+Quantidade de Numeros na lista: 10
+Ordenacao	Tempo
+BubbleSort	0.0000000000
+QuickSort	0.0000000000
+BucketSort	0.0000000000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000000000
+QuickSort	0.0000000000
+BucketSort	0.0000000000
+Quantidade de Numeros na lista: 1000
+Ordenacao	Tempo
+BubbleSort	0.0020000000
+QuickSort	0.0000000000
+BucketSort	0.0000000000
+Quantidade de Numeros na lista: 10000
+Ordenacao	Tempo
+BubbleSort	0.3210000000
+QuickSort	0.0010000000
+BucketSort	0.0000000000
+Quantidade de Numeros na lista: 100000
+Ordenacao	Tempo
+BubbleSort	33.6890000000
+QuickSort	0.0170000000
+BucketSort	0.0020000000

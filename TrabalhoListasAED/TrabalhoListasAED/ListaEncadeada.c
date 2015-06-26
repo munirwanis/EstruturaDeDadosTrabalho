@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 #ifndef NUM_MAX_LISTA
-#define NUM_MAX_LISTA 10
+#define NUM_MAX_LISTA 100000
 #endif
 
 
@@ -13,6 +14,7 @@ typedef struct No
 
 item * current, *head = NULL;
 
+// Cria a lista
 item* CreateList(int val)
 {
 	item *ptr = (item *)malloc(sizeof(item));
@@ -30,6 +32,7 @@ item* CreateList(int val)
 	getchar();
 }
 
+// Adiciona a lista encadeada um número inteiro
 item* AddToList(int val)
 {
 	if (!head) 	{ return CreateList(val); }
@@ -42,6 +45,7 @@ item* AddToList(int val)
 	return ptr;
 }
 
+// BubbleSort para lista encadeada
 void ListBubbleSort(item *start)
 {
 	int swapped, i;
@@ -72,6 +76,7 @@ void ListBubbleSort(item *start)
 	} while (swapped);
 }
 
+// Printa a lista criada
 void PrintList()
 {
 	item *ptr = head;
@@ -84,14 +89,29 @@ void PrintList()
 	printf("----End of Linked List----\n");
 }
 
-void LinkedListTest()
+// Chama os métodos da Lista Encadeada
+void ListaEncadeada()
 {
+	FILE *fp;
+
+	clock_t start, end;
+	double cpu_time_used;
+
 	for (int i = 0; i < NUM_MAX_LISTA; i++)
 	{
 		AddToList(rand() % NUM_MAX_LISTA);
 	}
-	PrintList();
+
+	fp = fopen("ListaEncadeadaResult.txt", "a");
+	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", NUM_MAX_LISTA);
+
+	start = clock();
 	ListBubbleSort(head);
-	PrintList();
-	getchar();
+	end = clock();
+	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	printf("\nLista Encadeada:\nOrdenacao\tTempo\n");
+	printf("BubbleSort\t%.10f\n", cpu_time_used);
+	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);
+
+	fclose(fp);
 }

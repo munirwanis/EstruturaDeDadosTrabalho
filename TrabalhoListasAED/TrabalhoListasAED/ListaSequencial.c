@@ -20,38 +20,33 @@ void ImprimeVetor(int vet[])
 	int i;
 	for (i = 0; i < MAX_TAM_VETOR; i++)
 	{
-		printf("%d\t", *(vet + i));
+		printf("%d\t", vet[i]);
 	}
 }
 
 // BubbleSort para a Lista Sequencial
 void BubbleSort(int vet[], int tamanho)
 {
-	int *temp, x, troca = 1, passos = 0;
+	int troca;
 
-	while (troca != 0 && tamanho > 0)
+	for (int i = 0; i < tamanho - 1; i++)
 	{
-		for (x = 0; x<tamanho - 1; x++)
+		for (int j = 0; j < tamanho - i - 1; j++)
 		{
-			//++passos;
-			troca = 0;
-			if (vet[x]>vet[x + 1])
+			if (vet[j] > vet[j + 1])
 			{
-				temp = vet[x];
-				vet[x] = vet[x + 1];
-				vet[x + 1] = temp;
-				troca = 1;
+				troca = vet[j];
+				vet[j] = vet[j + 1];
+				vet[j + 1] = troca;
 			}
 		}
-		--tamanho;
 	}
-	//printf("\nBubbleSort (passos): %d\n",passos);
 }
 
 // QuickSort para a Lista Sequencial
 void QuickSort(int vet[], int inicio, int fim)
 {
-	int i, j, *pivo, *aux;
+	int i, j, pivo, aux;
 	i = inicio;
 	j = fim;
 	pivo = vet[(inicio + fim) / 2];
@@ -89,39 +84,48 @@ void BucketSort(int vet[])
 		}
 	}
 }
+
 // testes para ver se métodos funcionam
-void SequencialTest()
+void ListaSequencial()
 {
 	int vetor[MAX_TAM_VETOR];
+
+	FILE *fp;
 
 	clock_t start, end;
 	double cpu_time_used;
 
-	InicializaVetor(vetor);
+	fp = fopen("ListaSequencialResult.txt", "a");
+	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", MAX_TAM_VETOR);
 
+	// Sequencial BubbleSort
+	InicializaVetor(vetor);
 	start = clock();
 	BubbleSort(vetor, MAX_TAM_VETOR);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("\nOrdenacao\tTempo\n");
+	printf("\nLista Sequencial:\nOrdenacao\tTempo\n");
 	printf("BubbleSort\t%.10f\n", cpu_time_used);
-	getchar();
-
+	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);
+	
+	// Sequencial QuickSort
 	InicializaVetor(vetor);
 	start = clock();
 	QuickSort(vetor, 0, MAX_TAM_VETOR - 1);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("\nOrdenacao\tTempo\n");
 	printf("QuickSort\t%.10f\n", cpu_time_used);
-	getchar();
-
+	fprintf(fp, "QuickSort\t%.10f\n", cpu_time_used);
+	
+	// Sequencial BucketSort
 	InicializaVetor(vetor);
 	start = clock();
 	BucketSort(vetor);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("\nOrdenacao\tTempo\n");
 	printf("BucketSort\t%.10f\n", cpu_time_used);
+	fprintf(fp, "BucketSort\t%.10f\n", cpu_time_used);
+	
+	fclose(fp);
 	getchar();
 }
