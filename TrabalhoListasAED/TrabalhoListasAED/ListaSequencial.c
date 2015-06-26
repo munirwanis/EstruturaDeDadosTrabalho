@@ -5,8 +5,8 @@
 #define MAX_TAM_VETOR 100000
 #endif
 
-// EDITADO POR MUNIR
-void InicializaVetor(int *vet[])
+// Inicializador do Vetor
+void InicializaVetor(int vet[])
 {
 	for (int i = 0; i < MAX_TAM_VETOR; i++)
 	{
@@ -14,7 +14,8 @@ void InicializaVetor(int *vet[])
 	}
 }
 
-void ImprimeVetor(int *vet[])
+// Função para imprimir o Vetor
+void ImprimeVetor(int vet[])
 {
 	int i;
 	for (i = 0; i < MAX_TAM_VETOR; i++)
@@ -23,8 +24,8 @@ void ImprimeVetor(int *vet[])
 	}
 }
 
-// PRECISO
-void BubbleSort(int *vet[], int tamanho)
+// BubbleSort para a Lista Sequencial
+void BubbleSort(int vet[], int tamanho)
 {
 	int *temp, x, troca = 1, passos = 0;
 
@@ -47,8 +48,8 @@ void BubbleSort(int *vet[], int tamanho)
 	//printf("\nBubbleSort (passos): %d\n",passos);
 }
 
-// PRECISO 
-void QuickSort(int *vet[], int inicio, int fim)
+// QuickSort para a Lista Sequencial
+void QuickSort(int vet[], int inicio, int fim)
 {
 	int i, j, *pivo, *aux;
 	i = inicio;
@@ -74,7 +75,7 @@ void QuickSort(int *vet[], int inicio, int fim)
 // testes para ver se métodos funcionam
 void SequencialTest()
 {
-	int *vetor[MAX_TAM_VETOR];
+	int vetor[MAX_TAM_VETOR];
 
 	clock_t start, end;
 	double cpu_time_used;
