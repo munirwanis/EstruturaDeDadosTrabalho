@@ -1,13 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#include "GlobalVariables.h"
-
-typedef struct No
-{
-	int val;
-	struct No * next;
-}item;
+#include "ListaEncadeada.h"
 
 item * current, *head = NULL;
 
@@ -20,7 +14,7 @@ item* CreateList(int val)
 	ptr->next = NULL;
 	head = current = ptr;
 	return ptr;
-	
+
 	while (current)
 	{
 		printf("%d\n", current->val);
@@ -81,14 +75,14 @@ void BucketSortOrd(item *l)
 	item *lista = l;
 	item *listaBucket = l;
 	int vetor[MAX_TAM_VETOR];
-	for (i = 0; i< MAX_TAM_VETOR; i++)
+	for (i = 0; i < MAX_TAM_VETOR; i++)
 	{
 		vetor[i] = lista->val;
 		lista = lista->next;
 	}
 	BucketSort(vetor);
 
-	for (i = 0; i< MAX_TAM_VETOR; i++)
+	for (i = 0; i < MAX_TAM_VETOR; i++)
 	{
 		listaBucket->val = vetor[i];
 		listaBucket = listaBucket->next;
@@ -121,9 +115,11 @@ void ListaEncadeada()
 		AddToList(rand() % MAX_TAM_VETOR);
 	}
 
+	// Abro arquivo
 	fp = fopen("ListaEncadeadaResult.txt", "a");
 	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", MAX_TAM_VETOR);
 
+	// BubbleSort
 	start = clock();
 	ListBubbleSort(head);
 	end = clock();
@@ -132,6 +128,7 @@ void ListaEncadeada()
 	printf("BubbleSort\t%.10f\n", cpu_time_used);
 	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);
 
+	// BucketSort
 	start = clock();
 	BucketSortOrd(head);
 	end = clock();

@@ -24,6 +24,9 @@
     <ClCompile Include="ListaSequencial.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QuickSortEncadeada.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListaEncadeada.h">
@@ -32,7 +35,7 @@
     <ClInclude Include="ListaSequencial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalVariables.h">
+    <ClInclude Include="QuickSortEncadeada.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,35 +1,5 @@
-Quantidade de Numeros na lista: 10
-Ordenacao	Tempo
-BubbleSort	0.0000000000
-Quantidade de Numeros na lista: 100
-Ordenacao	Tempo
-BubbleSort	0.0000000000
-Quantidade de Numeros na lista: 1000
-Ordenacao	Tempo
-BubbleSort	0.0040000000
-Quantidade de Numeros na lista: 10000
-Ordenacao	Tempo
-BubbleSort	0.4520000000
 Quantidade de Numeros na lista: 100000
 Ordenacao	Tempo
-BubbleSort	55.1880000000
-Quantidade de Numeros na lista: 100000
-Ordenacao	Tempo
-BubbleSort	54.4200000000
-BucketSort	31.8300000000
-Quantidade de Numeros na lista: 10
-Ordenacao	Tempo
-BubbleSort	0.0000000000
-BucketSort	0.0000000000
-Quantidade de Numeros na lista: 1000
-Ordenacao	Tempo
-BubbleSort	0.0040000000
-BucketSort	0.0000000000
-Quantidade de Numeros na lista: 10000
-Ordenacao	Tempo
-BubbleSort	0.4350000000
-BucketSort	0.0000000000
-Quantidade de Numeros na lista: 100000
-Ordenacao	Tempo
-BubbleSort	52.5400000000
+BubbleSort	58.4790000000
 BucketSort	0.0040000000
+QucikSort	0.0650000000

@@ -81,11 +81,12 @@
     <ClCompile Include="ListaEncadeada.c" />
     <ClCompile Include="ListaSequencial.c" />
     <ClCompile Include="Principal.c" />
+    <ClCompile Include="QuickSortEncadeada.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="ListaEncadeada.h" />
     <ClInclude Include="ListaSequencial.h" />
+    <ClInclude Include="QuickSortEncadeada.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

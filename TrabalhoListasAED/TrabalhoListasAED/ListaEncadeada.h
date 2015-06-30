@@ -1,4 +1,7 @@
 #include <time.h>
+#ifndef MAX_TAM_VETOR
+#define MAX_TAM_VETOR 1000
+#endif
 
 typedef struct No
 {

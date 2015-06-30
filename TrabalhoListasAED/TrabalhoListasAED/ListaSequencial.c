@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "GlobalVariables.h"
+#include "ListaEncadeada.h"
 
 // Inicializador do Vetor
 void InicializaVetor(int vet[])
