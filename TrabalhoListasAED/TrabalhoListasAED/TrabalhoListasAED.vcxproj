@@ -83,6 +83,7 @@
     <ClCompile Include="Principal.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GlobalVariables.h" />
     <ClInclude Include="ListaEncadeada.h" />
     <ClInclude Include="ListaSequencial.h" />
   </ItemGroup>

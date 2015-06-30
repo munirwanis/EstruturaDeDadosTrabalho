@@ -1,10 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#ifndef NUM_MAX_LISTA
-#define NUM_MAX_LISTA 100000
-#endif
-
+#include "GlobalVariables.h"
 
 typedef struct No
 {
@@ -76,6 +73,28 @@ void ListBubbleSort(item *start)
 	} while (swapped);
 }
 
+// BucketSort para a lista encadeada
+void BucketSortOrd(item *l)
+{
+	int i;
+
+	item *lista = l;
+	item *listaBucket = l;
+	int vetor[MAX_TAM_VETOR];
+	for (i = 0; i< MAX_TAM_VETOR; i++)
+	{
+		vetor[i] = lista->val;
+		lista = lista->next;
+	}
+	BucketSort(vetor);
+
+	for (i = 0; i< MAX_TAM_VETOR; i++)
+	{
+		listaBucket->val = vetor[i];
+		listaBucket = listaBucket->next;
+	}
+}
+
 // Printa a lista criada
 void PrintList()
 {
@@ -97,13 +116,13 @@ void ListaEncadeada()
 	clock_t start, end;
 	double cpu_time_used;
 
-	for (int i = 0; i < NUM_MAX_LISTA; i++)
+	for (int i = 0; i < MAX_TAM_VETOR; i++)
 	{
-		AddToList(rand() % NUM_MAX_LISTA);
+		AddToList(rand() % MAX_TAM_VETOR);
 	}
 
 	fp = fopen("ListaEncadeadaResult.txt", "a");
-	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", NUM_MAX_LISTA);
+	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", MAX_TAM_VETOR);
 
 	start = clock();
 	ListBubbleSort(head);
@@ -112,6 +131,13 @@ void ListaEncadeada()
 	printf("\nLista Encadeada:\nOrdenacao\tTempo\n");
 	printf("BubbleSort\t%.10f\n", cpu_time_used);
 	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);
+
+	start = clock();
+	BucketSortOrd(head);
+	end = clock();
+	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	printf("BucketSort\t%.10f\n", cpu_time_used);
+	fprintf(fp, "BucketSort\t%.10f\n", cpu_time_used);
 
 	fclose(fp);
 }

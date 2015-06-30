@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#ifndef MAX_TAM_VETOR
-#define MAX_TAM_VETOR 100000
-#endif
+#include "GlobalVariables.h"
 
 // Inicializador do Vetor
 void InicializaVetor(int vet[])
