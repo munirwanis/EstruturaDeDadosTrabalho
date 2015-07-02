@@ -2,7 +2,7 @@
 
 void InicializaVetor(int vet[]);
 
-void ImprimeVetor(int vet[]);
+void imprimeVetor(int vet[]);
 
 void BubbleSort(int vet[], int tamanho);
 

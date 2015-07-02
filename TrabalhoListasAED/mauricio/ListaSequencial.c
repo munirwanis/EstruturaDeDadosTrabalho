@@ -3,6 +3,9 @@
 #include <time.h>
 #include "ListaEncadeada.h"
 
+
+
+
 // Inicializador do Vetor
 void InicializaVetor(int vet[])
 {
@@ -68,20 +71,60 @@ void QuickSort(int vet[], int inicio, int fim)
 // BucketSort para a Lista Sequencial
 void BucketSort(int vet[])
 {
-	int i, j;
-	int count[MAX_TAM_VETOR];
-	for (i = 0; i < MAX_TAM_VETOR; i++) {
-		count[i] = 0;
-	}
-	for (i = 0; i < MAX_TAM_VETOR; i++) {
-		(count[vet[i]])++;
-	}
-	for (i = 0, j = 0; i < MAX_TAM_VETOR; i++) {
-		for (; count[i] > 0; (count[i])--) {
-			vet[j++] = i;
-		}
-	}
+
+    typedef struct 
+	{
+         int quantidade;
+         int balde[tam_bucket];
+    }bucket;
+    
+	int i, j,k;
+	
+	bucket BucketList[num_balde];
+	
+    for(i=0;i<num_balde;i++)                 //Colocar 0 em todas variavel quantidade
+    {
+        BucketList[i].quantidade=0;
+    } 
+    for(i=0;i<MAX_TAM_VETOR;i++) // Percorrer o vetor todo
+    {
+        j=(num_balde)-1;    //Para saber a quantidade do balde
+        while(j>=0)     
+        {
+            if(vet[i] >= (j*10)) // Verifica a posicao a se inserida
+            {
+                BucketList[j].balde[BucketList[j].quantidade]=vet[i]; // colocar o elemento na posicao referente a ele pela a quantidade
+                (BucketList[j].quantidade)++;       // incrmenta a quantidade
+                break;
+            }     
+            j--;    //Diminui a possibilidade da posica a ser inserido 
+        }
+    
+    }
+        
+    for(i=0;i<num_balde;i++)   //Ordena chamando outro metodo
+    {
+        if(BucketList[i].quantidade > 0)
+        {
+            BubbleSort(BucketList[i].balde,BucketList[i].quantidade);
+        
+        }     
+    }                  
+    i=0;
+   
+    for(j=0;j <num_balde; j++) // Os elementos sao inserido no vetor
+    {                  
+        for(k=0;k < BucketList[j].quantidade;k++)
+        {
+            vet[i]=BucketList[j].balde[k];
+            i++;
+        }
+    }
+    
+
 }
+
+
 
 // testes para ver se métodos funcionam
 void ListaSequencial()
@@ -93,18 +136,18 @@ void ListaSequencial()
 	clock_t start, end;
 	double cpu_time_used;
 
+	fp = fopen("ListaSequencialResult.txt", "a");
+	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", MAX_TAM_VETOR);
+    
 	// Sequencial BubbleSort
 	InicializaVetor(vetor);
 	start = clock();
 	BubbleSort(vetor, MAX_TAM_VETOR);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	fp = fopen("ListaSequencialBubble.csv", "a");
-	fprintf(fp, "%.10f;%d\n", cpu_time_used, MAX_TAM_VETOR);
-	fclose(fp);
-	/*printf("\nLista Sequencial:\nOrdenacao\tTempo\n");
+	printf("\nLista Sequencial:\nOrdenacao\tTempo\n");
 	printf("BubbleSort\t%.10f\n", cpu_time_used);
-	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);*/
+	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);
 	
 	// Sequencial QuickSort
 	InicializaVetor(vetor);
@@ -112,21 +155,21 @@ void ListaSequencial()
 	QuickSort(vetor, 0, MAX_TAM_VETOR - 1);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	fp = fopen("ListaSequencialQuick.csv", "a");
-	fprintf(fp, "%.10f;%d\n", cpu_time_used, MAX_TAM_VETOR);
-	fclose(fp);
-	/*printf("QuickSort\t%.10f\n", cpu_time_used);
-	fprintf(fp, "QuickSort\t%.10f\n", cpu_time_used);*/
+	printf("QuickSort\t%.10f\n", cpu_time_used);
+	fprintf(fp, "QuickSort\t%.10f\n", cpu_time_used);
 	
+	
+	printf("Oi");
 	// Sequencial BucketSort
 	InicializaVetor(vetor);
 	start = clock();
+	printf("Oi");
 	BucketSort(vetor);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	fp = fopen("ListaSequencialBucket.csv", "a");
-	fprintf(fp, "%.10f;%d\n", cpu_time_used, MAX_TAM_VETOR);
+	printf("BucketSort2\t%.10f\n", cpu_time_used);
+	fprintf(fp, "BucketSort\t%.10f\n", cpu_time_used);
+	
 	fclose(fp);
-	/*printf("BucketSort\t%.10f\n", cpu_time_used);
-	fprintf(fp, "BucketSort\t%.10f\n", cpu_time_used);*/
+	getchar();
 }

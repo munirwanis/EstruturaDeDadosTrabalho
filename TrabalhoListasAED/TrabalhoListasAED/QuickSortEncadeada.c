@@ -97,19 +97,17 @@ void ListaEncadeadaQuick()
 		InsereElemento(&a, rand() % MAX_TAM_VETOR);
 	}
 
-	fp = fopen("ListaEncadeadaResult.txt", "a");
-
 	//ImprimeLista(a);
 
 	start = clock();
 	QuickSortEncadeada(a);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("QuickSort\t%.10f\n", cpu_time_used);
-	fprintf(fp, "QucikSort\t%.10f\n", cpu_time_used);
+	fp = fopen("ListaEncadeadaQuick.csv", "a");
+	fprintf(fp, "%.10f;%d\n", cpu_time_used, MAX_TAM_VETOR);
+	fclose(fp);
+	/*printf("QuickSort\t%.10f\n", cpu_time_used);
+	fprintf(fp, "QucikSort\t%.10f\n", cpu_time_used);*/
 
 	//ImprimeLista(a);
-
-	fclose(fp);
-
 }

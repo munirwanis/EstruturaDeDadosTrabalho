@@ -116,26 +116,26 @@ void ListaEncadeada()
 		AddToList(rand() % MAX_TAM_VETOR);
 	}
 
+	// Abro arquivo
+	fp = fopen("ListaEncadeadaResult.txt", "a");
+	fprintf(fp, "Quantidade de Numeros na lista: %d\nOrdenacao\tTempo\n", MAX_TAM_VETOR);
+
 	// BubbleSort
 	start = clock();
-	ListBubbleSort(head);
+	//ListBubbleSort(head);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	fp = fopen("ListaEncadeadaBubble.csv", "a");
-	fprintf(fp, "%.10f;%d\n", cpu_time_used, MAX_TAM_VETOR);
-	fclose(fp);
-	/*printf("\nLista Encadeada:\nOrdenacao\tTempo\n");
+	printf("\nLista Encadeada:\nOrdenacao\tTempo\n");
 	printf("BubbleSort\t%.10f\n", cpu_time_used);
-	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used)*/;
+	fprintf(fp, "BubbleSort\t%.10f\n", cpu_time_used);
 
 	// BucketSort
 	start = clock();
 	BucketSortOrd(head);
 	end = clock();
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	fp = fopen("ListaEncadeadaBucket.csv", "a");
-	fprintf(fp, "%.10f;%d\n", cpu_time_used, MAX_TAM_VETOR);
+	printf("BucketSort\t%.10f\n", cpu_time_used);
+	fprintf(fp, "BucketSort\t%.10f\n", cpu_time_used);
+
 	fclose(fp);
-	/*printf("BucketSort\t%.10f\n", cpu_time_used);
-	fprintf(fp, "BucketSort\t%.10f\n", cpu_time_used);*/
 }
