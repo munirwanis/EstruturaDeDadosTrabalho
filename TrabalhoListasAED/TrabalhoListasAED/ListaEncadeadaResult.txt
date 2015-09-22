@@ -1,0 +1,5 @@
+Quantidade de Numeros na lista: 100000
+Ordenacao	Tempo
+BubbleSort	58.4790000000
+BucketSort	0.0040000000
+QucikSort	0.0650000000

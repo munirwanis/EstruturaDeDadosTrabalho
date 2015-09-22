@@ -1,0 +1,140 @@
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000490000
+BucketSort	0.0000050000
+QucikSort	0.0000170000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000500000
+BucketSort	0.0000050000
+QucikSort	0.0000180000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000980000
+BucketSort	0.0000090000
+QucikSort	0.0000280000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000490000
+BucketSort	0.0000050000
+QucikSort	0.0000160000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000900000
+BucketSort	0.0000100000
+QucikSort	0.0000270000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0001290000
+BucketSort	0.0000100000
+QucikSort	0.0000290000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0001110000
+BucketSort	0.0000100000
+QucikSort	0.0000300000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0001020000
+BucketSort	0.0000100000
+QucikSort	0.0000280000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000490000
+BucketSort	0.0000070000
+QucikSort	0.0000150000
+Quantidade de Numeros na lista: 100
+Ordenacao	Tempo
+BubbleSort	0.0000480000
+BucketSort	0.0000060000
+QucikSort	0.0000160000
+Quantidade de Numeros na lista: 500
+Ordenacao	Tempo
+BubbleSort	0.0013010000
+BucketSort	0.0000210000
+QucikSort	0.0000890000
+Quantidade de Numeros na lista: 500
+Ordenacao	Tempo
+BubbleSort	0.0022120000
+BucketSort	0.0000400000
+QucikSort	0.0002890000
+Quantidade de Numeros na lista: 500
+Ordenacao	Tempo
+BubbleSort	0.0018710000
+BucketSort	0.0000350000
+QucikSort	0.0001450000
+Quantidade de Numeros na lista: 1000
+Ordenacao	Tempo
+BubbleSort	0.0045490000
+BucketSort	0.0000510000
+QucikSort	0.0001840000
+Quantidade de Numeros na lista: 1000
+Ordenacao	Tempo
+BubbleSort	0.0110130000
+BucketSort	0.0001000000
+QucikSort	0.0003420000
+Quantidade de Numeros na lista: 1000
+Ordenacao	Tempo
+BubbleSort	0.0101280000
+BucketSort	0.0000470000
+QucikSort	0.0001900000
+Quantidade de Numeros na lista: 5000
+Ordenacao	Tempo
+BubbleSort	0.1146520000
+BucketSort	0.0001700000
+QucikSort	0.0011630000
+Quantidade de Numeros na lista: 5000
+Ordenacao	Tempo
+BubbleSort	0.1169480000
+BucketSort	0.0001910000
+QucikSort	0.0011320000
+Quantidade de Numeros na lista: 5000
+Ordenacao	Tempo
+BubbleSort	0.1177850000
+BucketSort	0.0001980000
+QucikSort	0.0011320000
+Quantidade de Numeros na lista: 10000
+Ordenacao	Tempo
+BubbleSort	0.4409270000
+BucketSort	0.0003450000
+QucikSort	0.0022820000
+Quantidade de Numeros na lista: 10000
+Ordenacao	Tempo
+BubbleSort	0.4476850000
+BucketSort	0.0003410000
+QucikSort	0.0021550000
+Quantidade de Numeros na lista: 10000
+Ordenacao	Tempo
+BubbleSort	0.4603210000
+BucketSort	0.0003540000
+QucikSort	0.0022180000
+Quantidade de Numeros na lista: 50000
+Ordenacao	Tempo
+BubbleSort	11.2313220000
+BucketSort	0.0017300000
+QucikSort	0.0139500000
+Quantidade de Numeros na lista: 50000
+Ordenacao	Tempo
+BubbleSort	11.2202120000
+BucketSort	0.0017610000
+QucikSort	0.0134940000
+Quantidade de Numeros na lista: 50000
+Ordenacao	Tempo
+BubbleSort	11.4644040000
+BucketSort	0.0021950000
+QucikSort	0.0135380000
+Quantidade de Numeros na lista: 100000
+Ordenacao	Tempo
+BubbleSort	46.3290600000
+BucketSort	0.0037230000
+QucikSort	0.0402260000
+Quantidade de Numeros na lista: 100000
+Ordenacao	Tempo
+BubbleSort	46.5153870000
+BucketSort	0.0034190000
+QucikSort	0.0289250000
+Quantidade de Numeros na lista: 100000
+Ordenacao	Tempo
+BubbleSort	46.3526390000
+BucketSort	0.0034470000
+QucikSort	0.0290740000
